@@ -118,8 +118,8 @@ void Tema2::setupHUD() {
     projectionMatrix = glm::ortho(0.1f, right, -0.1f, top, 0.01f, 200.0f);
     glm::mat4 modelMatrix = glm::mat4(1);
     modelMatrix = glm::translate(modelMatrix, camera->GetTargetPosition() + camera->forward);
-    //modelMatrix = glm::rotate(modelMatrix, angleX, glm::vec3(0, 1, 0));
-    //modelMatrix = glm::rotate(modelMatrix, angleY, glm::vec3(1, 0, 0));
+    modelMatrix = glm::rotate(modelMatrix, -angleX, glm::vec3(1, 0, 0));
+    modelMatrix = glm::rotate(modelMatrix, -angleY, glm::vec3(0, 1, 0));
 
     // healthbar
     glm::mat4 healthBar = modelMatrix;
@@ -195,6 +195,15 @@ void Tema2::Init()
                 obstacle_count++;
             }
         }
+    }
+
+    // invisible wall behind the player so it cannot cheat
+    for (int i = 0; i < cols; i++) {
+        obstacles[obstacle_count].x = -1;
+        obstacles[obstacle_count].y = 0;
+        obstacles[obstacle_count].z = i;
+        obstacles[obstacle_count].length = 1;
+        obstacle_count++;
     }
 
     // place enemies
