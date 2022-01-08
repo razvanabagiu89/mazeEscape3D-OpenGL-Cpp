@@ -33,7 +33,7 @@ Hero gets blocked by obstacles and if he collides with enemies, it gets a semnif
 
 - Enemy
 
-Enemy is constructed using 1 imported mesh. The enemy is placed randomly at a free position in the maze and proceeds to move along its cell. For this movement I chose a 'plus' grid of moving. If the enemy touches the hero, it gives a big amount of health drain, but also due to its movement the hero can try and go past him without killing him. When an enemy gets killed by a bullet or by the hero crashing into it, a death animation appears, sort of an explosion that it is generated using vertex displacement on the Deformed Shader.
+Enemy is constructed using 1 imported mesh. The enemy is placed randomly at a free position in the maze and proceeds to move along its cell. For this movement I chose a 'plus' type of moving. If the enemy touches the hero, it gives a big amount of health drain, but also due to its movement the hero can try and go past him without killing him. When an enemy gets killed by a bullet or by the hero crashing into it, a death animation appears, sort of an explosion that it is generated using vertex displacement technique on the Deformed Shader.
 
 - Obstacle
 
